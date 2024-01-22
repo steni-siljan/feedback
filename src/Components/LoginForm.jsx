@@ -1,9 +1,13 @@
 import React  from "react";
 import './LoginForm.css';
+import './PolicyList';
 import { FaLock, FaUser } from "react-icons/fa";
 
 
-const LoginForm = () => {
+const LoginForm = ({history}) => {
+    const handleLogin = () => {
+        history.push ('/Policy');
+    };
     return (
         <div className="wrapper">
             <form action="">
@@ -20,7 +24,7 @@ const LoginForm = () => {
                     <label><input type="checkbox"/> Remember Me  </label>
                     <a href="#">Forgot password?</a>
                 </div>
-                <button type="submit">Login</button>
+                <button type="submit" onClick={handleLogin}>Login</button>
                 <div className="register-link">
                     <p>Don't have an account? <a href="#"> Register</a></p>
                 </div>
